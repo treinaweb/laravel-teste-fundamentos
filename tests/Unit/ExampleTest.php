@@ -29,7 +29,7 @@ class ExampleTest extends TestCase
         $this->assertNotEquals($nomes, $pessoa);
     }
 
-    function test_object_asserts(): void
+    public function test_object_asserts(): void
     {
         $user = new User();
         $this->assertInstanceOf(User::class, $user);
@@ -44,5 +44,23 @@ class ExampleTest extends TestCase
         $user2->name = 'elton';
 
         $this->assertEquals($user, $user2);
+    }
+
+    public function test_type_asserts(): void
+    {
+        $inteiro = 10;
+        $this->assertIsInt($inteiro);
+
+        $string = "Olá Treinaweb";
+        $this->assertIsString($string);
+
+        $nomes2 = ['joão', 'maria', 'pedro'];
+        $this->assertIsArray($nomes2);
+
+        $bool = true;
+        $this->assertIsBool($bool);
+
+        $user2 = new User();
+        $this->assertIsObject($user2);
     }
 }
