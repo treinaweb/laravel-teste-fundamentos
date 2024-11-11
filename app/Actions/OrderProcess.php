@@ -15,7 +15,7 @@ class OrderProcess
     {
         //etapas do processament
 
-        $this->payPal->paymentProcess();
+        $this->payPal->paymentProcess(123);
 
         return "Order processed";
     }
